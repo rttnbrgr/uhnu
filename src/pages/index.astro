@@ -8,44 +8,114 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <!-- <Welcome /> -->
-  <div class="container">
-    <p>Hi. 👋</p>
-    <p>My name is Nathan. And this is the website I’m building.</p>
-    <p>
-      I like dad rap and sour candy. I have two cats, and am a long suffering
-      Blazers fan. During the day I run a small design team at Copilot CRM. At
-      night I rewatch cartoons and workplace comedies. I used to make stuff in
-      my free time and I’m trying to do that again.
-    </p>
-    <p>Starting with this project here.</p>
-    <p>Hope you stick around.</p>
+  <div class="parent">
+    <div class="container">
+      <p>Hi. 👋</p>
+      <p>My name is Nathan. <br />And this is my new website.</p>
+      <p>
+        I like <a
+          href="https://www.youtube.com/watch?v=jbN4anirOwQ&t=733s#"
+          target="_blank">dad</a
+        >
+        <a href="https://www.youtube.com/watch?v=klZNvJArVSE" target="_blank"
+          >rap</a
+        > and sour candy. I have two cats and believe <a
+          href="https://www.reddit.com/r/ripcity/comments/1itu0wq/this_tou_edit_goes_so_hard/"
+          target="_blank"
+        >
+          Toumani Camara
+        </a> may be the savior of the Portland Trailblazers franchise.
+      </p>
+      <p>
+        During the day I run a small design team at <a
+          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          target="_blank">Copilot CRM</a
+        >. At night I rewatch cartoons and workplace comedies. I used to make
+        stuff in my free time, and I’m trying to do that again.
+      </p>
+      <!-- <p>Starting with this project <a href="#" target="_blank">here.</a></p> -->
+      <p>Starting with this project here.</p>
+      <p>Hope you stick around.</p>
+    </div>
   </div>
+
+  <style>
+    /* Should move to global? */
+    :root {
+      /* System Fonts */
+      /* https://systemfontstack.com/ */
+      --system-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      --system-serif: Iowan Old Style, Apple Garamond, Baskerville,
+        Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
+        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+      --system-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+        monospace;
+
+      /* Spacing */
+      --page-px: 1rem;
+      /* Media */
+      --max-width: 37em;
+
+      /* inbetween small and big tablets */
+      --bp-tablet: 900px;
+    }
+
+    p {
+      font-family: var(--system-sans);
+      font-size: 1.5rem; /* 24px */
+      line-height: 1.25;
+      font-weight: 500;
+      transition: all 0.2s ease-out;
+    }
+
+    a,
+    a:visited {
+      color: revert;
+      color: blue;
+    }
+    .parent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      /* max-width: 600px; */
+      max-width: calc(var(--max-width) + var(--page-px) * 2);
+      margin: 0 auto;
+      padding: 0 var(--page-px);
+      transition: padding 0.2s ease-out;
+    }
+
+    /* @media (min-width: var(--bp-tablet)) { */
+    @media (min-width: 821px) {
+      :root {
+        --page-px: 4rem;
+        --max-width: 42em;
+      }
+
+      p {
+        /* color: blue; */
+        font-size: 1.875rem; /* 30px */
+        line-height: 1.35;
+        font-weight: 600;
+      }
+    }
+    @media (min-width: 1200px) {
+      :root {
+        --max-width: 52em;
+      }
+
+      p {
+        /* color: red; */
+        font-size: 2.25rem; /* 36px */
+      }
+    }
+  </style>
+
+  <!-- I like dad rap and sour candy. I have two cats, and am a long suffering Blazers
+fan. During the day I run a small design team at Copilot CRM. At night I rewatch
+cartoons and workplace comedies. I used to make stuff in my free time and I’m
+trying to do that again. -->
 </Layout>
-
-<style>
-  /* Should move to global? */
-  :root {
-    /* System Fonts */
-    /* https://systemfontstack.com/ */
-    --system-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    --system-serif: Iowan Old Style, Apple Garamond, Baskerville,
-      Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
-      Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-    --system-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
-      monospace;
-
-    /* Spacing */
-  }
-  p {
-    font-family: var(--system-sans);
-    font-size: 1.25rem;
-    line-height: 1.5;
-    font-weight: 400;
-  }
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-</style>
